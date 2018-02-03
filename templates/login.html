@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Vortex Workshop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <div class="container">
+      <h1>A Simple Login Page</h1>
+      <br>
+      <form action="" method="post">
+	<div class="form-group">
+  		<label for="usr">Username:</label>
+		<input type="text" class="form-control" name="username" placeholder="Username" value="{{request.form.username}}">
+	</div>
+        <div class="form-group">
+ 		<label for="pwd">Password:</label>
+		<input type="password" class="form-control" name="password" placeholder="Password" value="{{request.form.password}}">
+	</div>
+        <input class="btn btn-success btn-lg" type="submit" value="Login">
+	<a href="/sess" class="btn btn-danger btn-lg" role="button">Destroy Session</a>
+      </form>
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+    </div>
+  </body>
+</html>
